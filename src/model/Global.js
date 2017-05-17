@@ -157,6 +157,10 @@ define(function (require) {
             function visitComponent(mainType, dependencies) {
                 var newCptOptionList = modelUtil.normalizeToArray(newOption[mainType]);
 
+                if (mainType === 'series') {
+                    componentsMap[mainType] = undefined
+                }
+                
                 var mapResult = modelUtil.mappingToExists(
                     componentsMap.get(mainType), newCptOptionList
                 );
