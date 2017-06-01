@@ -160,7 +160,11 @@ define(function (require) {
                 if (mainType === 'series') {
                     componentsMap[mainType] = undefined
                 }
-                
+
+                if (mainType === 'visualMap') {
+                    componentsMap[mainType] = undefined
+                }
+
                 var mapResult = modelUtil.mappingToExists(
                     componentsMap.get(mainType), newCptOptionList
                 );
